@@ -14,9 +14,9 @@
 # This Makefile is a complete train wreck.  I'm sorry.  --tsuna
 
 PACKAGE_VERSION := 1.2.1
-RPM_REVISION := 1
+RPM_REVISION := 2
 # Where do we install our files.
-tcollectordir := /usr/local/tcollector
+tcollectordir := /opt/tcollector
 
 # Various commands we need.
 MKDIR_P := mkdir -p
@@ -179,7 +179,8 @@ clean:
           echo rmdir "'$$dir'"; \
           rmdir "$$dir" || exit $$?; \
         done
-	rm -f common.spec $(RPM_SPEC) $(EOSRPM_SPEC) filelist manifest.txt $(EOSRPM)
+	rm -f common.spec $(RPM_SPEC) $(EOSRPM_SPEC)  filelist manifest.txt $(EOSRPM)
+	rm -rf noarch
 	@rm -f .dist-stamp
 
 distclean: clean

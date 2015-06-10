@@ -21,8 +21,8 @@
 . /etc/init.d/functions
 
 TSD_HOST=tsd
-THIS_HOST=`hostname`
-TCOLLECTOR=${TCOLLECTOR-/usr/local/tcollector/tcollector.py}
+THIS_HOST=`hostname -s`
+TCOLLECTOR=${TCOLLECTOR-/opt/tcollector/tcollector.py}
 PIDFILE=${PIDFILE-/var/run/tcollector.pid}
 LOGFILE=${LOGFILE-/var/log/tcollector.log}
 LOGFILE_MAX_BYTES=${LOGFILE_MAX_BYTES-67108864}

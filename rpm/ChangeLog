@@ -1,3 +1,6 @@
+* Fri Jun 12 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-3
+- upcate ifstat to support new nics
+
 * Tue Aug 26 2014 Kieren Hynd <kieren.hynd@ticketmaster.co.uk> 1.0.3-1
 - Parameter for reconnect-interval, clean .pyc's on startup, stop stripping hostnames, add some start runlevels
 

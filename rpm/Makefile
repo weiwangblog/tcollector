@@ -171,7 +171,7 @@ $(EOSRPM_SPEC): eos.spec common.spec
 	} >$@-t
 	mv $@-t $@
 
-clean:
+clean: distclean
 	rm -rf "$(DESTDIR)/$(tcollectordir)"
 	rm -f $(DESTDIR)/etc/init.d/tcollector
 	rm -f $(DESTDIR)/usr/bin/tcollector

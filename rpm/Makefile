@@ -14,7 +14,7 @@
 # This Makefile is a complete train wreck.  I'm sorry.  --tsuna
 
 PACKAGE_VERSION := 1.2.1
-RPM_REVISION := 3
+RPM_REVISION := 4
 # Where do we install our files.
 tcollectordir := /opt/tcollector
 
@@ -38,11 +38,13 @@ FILES := \
 	collectors/0/netstat.py	\
 	collectors/0/procnettcp.py	\
 	collectors/0/procstats.py	\
+	collectors/0/nfsiostat.sh	\
 	collectors/0/smart-stats.py	\
 	collectors/__init__.py	\
 	collectors/lib/__init__.py	\
 	collectors/lib/utils.py	\
 	tcollector.py	\
+	nfsiostattsd	\
 
 # Extra EOS-specific collectors
 EXTRA := \
@@ -61,7 +63,8 @@ RPM := $(BASENAME).$(RPM_TARGET).rpm
 EOSRPM := $(BASENAME)-eos.$(RPM_TARGET).rpm
 SWIX := $(BASENAME).swix
 
-all: rpm $(SWIX)
+#all: rpm $(SWIX)
+all: clean distclean rpm 
 rpm: $(RPM)
 
 $(SWIX): $(EOSRPM) manifest.txt

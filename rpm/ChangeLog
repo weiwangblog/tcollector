@@ -1,3 +1,6 @@
+* Tue Jun 16 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-4
+- Add nfsiostat stats.
+
 * Fri Jun 12 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-3
 - upcate ifstat to support new nics
 

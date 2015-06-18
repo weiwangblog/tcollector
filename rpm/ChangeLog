@@ -1,3 +1,6 @@
+* Wed Jun 17 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-5
+-  fix nfsiostat with hugepage issue
+
 * Tue Jun 16 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-4
 - Add nfsiostat stats.
 

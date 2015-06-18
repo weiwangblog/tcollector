@@ -14,7 +14,7 @@
 # This Makefile is a complete train wreck.  I'm sorry.  --tsuna
 
 PACKAGE_VERSION := 1.2.1
-RPM_REVISION := 4
+RPM_REVISION := 5
 # Where do we install our files.
 tcollectordir := /opt/tcollector
 

@@ -35,7 +35,11 @@ if [ -f /etc/sysconfig/$prog ]; then
 fi
 
 lockfile=${LOCKFILE-/var/lock/subsys/tcollector}
+vendor=$(dmidecode -s system-manufacturer | tr " " "_")
+model=$(dmidecode -s system-product-name | tr " " "_" )
 
+
+EXTRA_TAGS="manufacturer=$vendor model=$model"
 EXTRA_TAGS_OPTS=""
 for TV in $EXTRA_TAGS; do
     EXTRA_TAGS_OPTS=${EXTRA_TAGS_OPTS}" -t ${TV}"

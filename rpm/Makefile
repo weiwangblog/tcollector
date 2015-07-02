@@ -14,7 +14,7 @@
 # This Makefile is a complete train wreck.  I'm sorry.  --tsuna
 
 PACKAGE_VERSION := 1.2.1
-RPM_REVISION := 5
+RPM_REVISION := 6
 # Where do we install our files.
 tcollectordir := /opt/tcollector
 
@@ -40,6 +40,7 @@ FILES := \
 	collectors/0/procstats.py	\
 	collectors/0/nfsiostat.sh	\
 	collectors/0/smart-stats.py	\
+	collectors/0/ipmi.py	\
 	collectors/__init__.py	\
 	collectors/lib/__init__.py	\
 	collectors/lib/utils.py	\

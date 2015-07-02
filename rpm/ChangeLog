@@ -1,3 +1,8 @@
+* Thu Jul 3 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-8
+-  add more virtua check to ipmi plugin
+
+* Wed Jul 2 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-7
+-  add virtua check to ipmi plugin
 
 * Wed Jul 2 2015 Wei Wang <wei.wang@riftio.com> 1.0.3-6
 -  Add ipmi plugin

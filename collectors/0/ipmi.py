@@ -24,6 +24,7 @@ import time
 import re
 
 IPMICLI = "/usr/bin/ipmitool sdr"
+VENDORCLI = "/usr/sbin/dmidecode -s system-manufacturer"
 
 SLEEP_BETWEEN_POLLS = 30 
 COMMAND_TIMEOUT = 10
@@ -37,6 +38,20 @@ def alarm_handler(signum, frame):
   print >>sys.stderr, ("Program took too long to run, "
                        "consider increasing its timeout.")
   raise Alarm()
+
+def dmidecode_is_broken():
+  """Determines whether dmidecode can be used.
+
+  Args:
+    drives: A list of device names on which we intend to use SMART.
+
+  Returns:
+    True if dmidecode is available, False otherwise.
+  """
+  if os.path.exists("/usr/sbin/dmidecode"):
+    return False
+  else:
+    return True
 
 
 def process_output(ipmi_output):
@@ -64,7 +79,16 @@ def main():
   # Exit gracefully if no block devices found
   #if not drives:
   #  sys.exit(13)
-
+  #if dmidecode_is_broken:
+  #   sys.exit(12)
+  signal.alarm(COMMAND_TIMEOUT)
+  dmicmd = subprocess.Popen( VENDORCLI,
+                               shell=True, stdout=subprocess.PIPE)
+  dmi_output = dmicmd.communicate()[0].split("\n")[0]
+  #print dmi_output
+  
+  if dmi_output == "OpenStack Foundation" or dmi_output == "Bochs":
+     sys.exit(13)
 
   while True:
     signal.alarm(COMMAND_TIMEOUT)
